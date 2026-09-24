@@ -1,0 +1,15 @@
+{
+  "name": "pixel-wrap",
+  "version": "1.0.0",
+  "description": "Image Processing Pipeline using the Decorator Pattern",
+  "main": "cli.js",
+  "scripts": {
+    "start": "node cli.js"
+  },
+  "keywords": ["decorator", "image", "processing", "jimp", "design-pattern"],
+  "author": "Aadritaaa",
+  "license": "MIT",
+  "dependencies": {
+    "jimp": "^1.6.0"
+  }
+}

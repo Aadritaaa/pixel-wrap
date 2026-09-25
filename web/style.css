@@ -5,6 +5,17 @@
 /* ─── Reset & tokens ──────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/*
+ * FIX: The HTML `hidden` attribute sets display:none via the browser's own
+ * stylesheet at very low specificity. Our .canvas-loading { display:flex },
+ * .canvas-placeholder { display:flex } and #preview-canvas { display:block }
+ * rules all override it, keeping the spinner/placeholder permanently visible
+ * and the canvas always rendered even when the JS sets el.hidden = true.
+ * This rule restores [hidden]'s intended semantics with !important so no
+ * class-level display: rule can ever override it again.
+ */
+[hidden] { display: none !important; }
+
 :root {
   /* Surfaces */
   --bg:         #0b0f19;

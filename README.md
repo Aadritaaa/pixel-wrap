@@ -6,6 +6,14 @@
 [![Node.js](https://img.shields.io/badge/Node.js-v24+-brightgreen)](https://nodejs.org)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Pattern](https://img.shields.io/badge/pattern-Decorator%20(GOF)-orange)]()
+[![Live Demo](https://img.shields.io/badge/demo-GitHub%20Pages-7c3aed)](https://aadritaaa.github.io/pixel-wrap/)
+
+## 🌐 Live Demo
+
+**[https://aadritaaa.github.io/pixel-wrap/](https://aadritaaa.github.io/pixel-wrap/)**
+
+An interactive browser demo of the same Decorator pattern — no terminal needed.  
+Upload any image, stack effects in any order, watch the canvas update live, and download the result.
 
 ---
 
@@ -55,6 +63,11 @@ pixel-wrap/
 │       ├── SepiaDecorator.js
 │       ├── ResizeDecorator.js
 │       └── WatermarkDecorator.js
+├── web/                          # ← Browser interactive demo
+│   ├── index.html                #   App shell
+│   ├── style.css                 #   Dark-mode UI styles
+│   ├── decorators.js             #   Same pattern, Canvas 2D API
+│   └── app.js                   #   Upload, effects, live preview
 ├── scripts/
 │   └── generateTestImage.js      # Programmatic test image generator
 ├── sample_images/

@@ -1,7 +1,7 @@
 # PixelWrap 🖼️
 
 > **An Image Processing Pipeline built with the Decorator Design Pattern**  
-> University Software Engineering Lab 3 — GOF Structural Patterns
+
 
 [![Node.js](https://img.shields.io/badge/Node.js-v24+-brightgreen)](https://nodejs.org)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
@@ -12,14 +12,14 @@
 
 **[https://aadritaaa.github.io/pixel-wrap/](https://aadritaaa.github.io/pixel-wrap/)**
 
-An interactive browser demo of the same Decorator pattern — no terminal needed.  
-Upload any image, stack effects in any order, watch the canvas update live, and download the result.
+An interactive browser demo of the Decorator pattern . 
+Upload any image, stack effects in any order, watch the canvas update live and download the result.
 
 ---
 
 ## Overview
 
-PixelWrap demonstrates the **Decorator Pattern** (Gang of Four, Structural) applied to real image processing. Instead of creating a combinatorial explosion of subclasses for every possible effect combination, PixelWrap wraps image objects in configurable decorator layers at runtime.
+PixelWrap demonstrates the **Decorator Pattern** applied to real image processing. Instead of creating a combinatorial explosion of subclasses for every possible effect combination, PixelWrap wraps image objects in configurable decorator layers at runtime.
 
 **Stack:** Node.js + [Jimp](https://github.com/jimp-dev/jimp) (pure JavaScript — no native binaries)
 
@@ -162,7 +162,7 @@ Adding a new effect (e.g., `sharpen`) requires:
    sharpen: (proc, opts) => new SharpenDecorator(proc, opts.amount),
    ```
 
-No other file needs to change. ✅
+No other file needs to change. 
 
 ---
 
@@ -175,15 +175,8 @@ No other file needs to change. ✅
 
 ---
 
-## Lab Submission Info
 
-- **Pattern:** Decorator (GOF Structural)
-- **Session 1:** Full implementation — all classes, CLI, tests, GitHub push
-- **Session 2:** Documentation — UML diagram, 15-section writeup, code review
-- **All commits:** 12 conventional commits across both sessions
-
----
 
 ## License
 
-MIT © Aadritaaa
+© Aadritaaa

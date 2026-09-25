@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PixelWrap — Decorator Pattern Demo</title>
+  <meta name="description" content="Interactive browser demo of the GOF Decorator design pattern applied to image processing." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- ─── Header ───────────────────────────────────────────────────────── -->
+    <header class="header">
+      <div class="header-brand">
+        <span class="header-logo">⬡</span>
+        <div>
+          <h1 class="header-title">PixelWrap</h1>
+          <p class="header-sub">Decorator Pattern · GOF Structural</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-reset" class="btn btn-ghost" title="Clear all effects and image">↺&nbsp;Reset</button>
+        <button id="btn-download" class="btn btn-primary" disabled title="Download result as PNG">⬇&nbsp;Download</button>
+      </div>
+    </header>
+
+    <!-- ─── Main ─────────────────────────────────────────────────────────── -->
+    <main class="main">
+
+      <!-- Left — controls sidebar -->
+      <aside class="panel panel-controls" aria-label="Controls">
+
+        <!-- Upload zone -->
+        <div id="upload-zone" class="upload-zone" role="button"
+             tabindex="0" aria-label="Upload image" title="Click or drag an image here">
+          <div class="upload-thumb-wrap"></div>
+          <div class="upload-icon-wrap" aria-hidden="true">📷</div>
+          <div class="upload-text-wrap">
+            <p class="upload-main-text">Drop an image here</p>
+            <p class="upload-hint">or click to browse</p>
+          </div>
+          <input type="file" id="file-input"
+                 accept="image/jpeg,image/png,image/webp,image/gif" hidden />
+        </div>
+
+        <!-- Effect palette -->
+        <div class="section">
+          <h2 class="section-title">Available Effects</h2>
+          <div class="effect-palette" id="effect-palette" role="group"
+               aria-label="Effect toggles"></div>
+        </div>
+
+        <!-- Active pipeline / layer stack -->
+        <div class="section">
+          <h2 class="section-title">Active Pipeline</h2>
+          <div class="layer-stack" id="layer-stack" role="list" aria-label="Active effects">
+            <div class="layer-empty" id="layer-empty" aria-live="polite">
+              <span>No effects active</span>
+              <span class="layer-empty-sub">Click an effect above to add it</span>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- Right — live preview -->
+      <section class="panel panel-preview" aria-label="Live preview">
+
+        <div class="canvas-container" id="canvas-container">
+          <!-- Placeholder before upload -->
+          <div class="canvas-placeholder" id="canvas-placeholder" aria-live="polite">
+            <div class="placeholder-icon" aria-hidden="true">🖼️</div>
+            <p>Upload an image to start</p>
+          </div>
+
+          <!-- Spinner while processing -->
+          <div class="canvas-loading" id="canvas-loading" hidden aria-live="polite" aria-label="Processing">
+            <div class="spinner" role="status"></div>
+            <span>Processing…</span>
+          </div>
+
+          <!-- Result canvas -->
+          <canvas id="preview-canvas" hidden aria-label="Processed image preview"></canvas>
+        </div>
+
+        <!-- Pipeline chain text -->
+        <div class="pipeline-bar" role="status" aria-live="polite" aria-label="Current pipeline">
+          <span class="pipeline-label">Pipeline</span>
+          <div class="pipeline-chain" id="pipeline-chain">
+            <span class="pipe-node pipe-base">BaseImage</span>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Decorator library must load before app logic -->
+  <script src="decorators.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
